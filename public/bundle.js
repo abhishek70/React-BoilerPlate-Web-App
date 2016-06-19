@@ -55,12 +55,42 @@
 
 	var React = __webpack_require__(2);
 	var ReactDOM = __webpack_require__(39);
+	var styles = __webpack_require__(169);
+	var Nav = __webpack_require__(171);
 
-	ReactDOM.render(React.createElement(
-	  'h1',
-	  null,
-	  'React Boiler Plate Web App'
-	), document.getElementById('app'));
+	var BoilerPlateHTML = React.createClass({
+	  displayName: 'BoilerPlateHTML',
+
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      { style: styles.body },
+	      React.createElement(Nav, null),
+	      React.createElement(
+	        'div',
+	        { className: 'container' },
+	        React.createElement(
+	          'div',
+	          { style: styles.starterTemplate },
+	          React.createElement(
+	            'h1',
+	            null,
+	            'React-Bootstrap starter template'
+	          ),
+	          React.createElement(
+	            'p',
+	            { className: 'lead' },
+	            'Use this document as a way to quickly start any new project.',
+	            React.createElement('br', null),
+	            ' All you get is this text and a mostly barebones HTML document.'
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	ReactDOM.render(React.createElement(BoilerPlateHTML, null), document.getElementById('app'));
 
 /***/ },
 /* 2 */
@@ -20354,6 +20384,89 @@
 	var ReactMount = __webpack_require__(161);
 
 	module.exports = ReactMount.renderSubtreeIntoContainer;
+
+/***/ },
+/* 169 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	var styles = {
+		body: {
+			paddingTop: '50px'
+		},
+		starterTemplate: {
+			padding: '40px 15px',
+			textAlign: 'center'
+		}
+	};
+
+	module.exports = styles;
+
+/***/ },
+/* 170 */,
+/* 171 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(2);
+	var ReactDOM = __webpack_require__(39);
+
+	var Nav = React.createClass({
+	  displayName: 'Nav',
+
+	  render: function render() {
+	    return React.createElement(
+	      'nav',
+	      { className: 'navbar navbar-inverse navbar-fixed-top' },
+	      React.createElement(
+	        'div',
+	        { className: 'container' },
+	        React.createElement(
+	          'div',
+	          { className: 'navbar-header' },
+	          React.createElement(
+	            'button',
+	            { type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#navbar', 'aria-expanded': 'false', 'aria-controls': 'navbar' },
+	            React.createElement(
+	              'span',
+	              { className: 'sr-only' },
+	              'Toggle navigation'
+	            ),
+	            React.createElement('span', { className: 'icon-bar' }),
+	            React.createElement('span', { className: 'icon-bar' }),
+	            React.createElement('span', { className: 'icon-bar' })
+	          ),
+	          React.createElement(
+	            'a',
+	            { className: 'navbar-brand', href: '#' },
+	            'Project name'
+	          )
+	        ),
+	        React.createElement(
+	          'div',
+	          { id: 'navbar', className: 'collapse navbar-collapse' },
+	          React.createElement(
+	            'ul',
+	            { className: 'nav navbar-nav' },
+	            React.createElement(
+	              'li',
+	              { className: 'active' },
+	              React.createElement(
+	                'a',
+	                { href: '#' },
+	                'Home'
+	              )
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+	module.exports = Nav;
 
 /***/ }
 /******/ ]);
